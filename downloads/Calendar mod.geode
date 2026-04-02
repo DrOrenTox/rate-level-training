@@ -1,0 +1,31 @@
+#include <Geode/Geode.hpp>
+#include <Geode/modify/MenuLayer.hpp>
+
+using namespace geode::prelude;
+
+class $modify(MyMenuLayer, MenuLayer) {
+    bool init() {
+        if (!MenuLayer::init()) return false;
+
+        auto label = CCLabelBMFont::create("Calendar Mod Loaded!", "bigFont.fnt");
+        label->setPosition({100, 100});
+        label->setScale(0.5f);
+        this->addChild(label);
+
+        return true;
+    }
+};
+geode sdk install-binaries -p android64
+"geode": "5.5.4",
+    "version": "v1.0.1",
+    "gd": {
+        "android": "2.2081"
+    },
+    "id": "yourname.calendarmod",
+    "name": "Calendar Mod",
+    "developer": "YourName",
+    "description": "A simple calendar for Geometry Dash 2.2081",
+    "resources": {
+        "files": []
+    }
+}
