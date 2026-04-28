@@ -1,0 +1,10 @@
+{
+	"geode": "3.0.0-beta.1",
+	"id": "drorentox.rate_level_training",
+	"version": "v1.0.0",
+	"name": "Rate Level Training",
+	"developer": "DrOrenTox",
+	"description": "Master the art of level rating! {Well Not really}  Practice identifying star difficulties with an integrated date display.",
+	"settings": {},
+        "gd": "*"
+}
