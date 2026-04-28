@@ -1,0 +1,34 @@
+name: Build Geode Mod
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+on:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - name: Windows
+            os: windows-latest
+          - name: Android64
+            os: ubuntu-latest
+            target: Android
+
+    name: ${{ matrix.config.name }}
+    runs-on: ${{ matrix.config.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Mod
+        uses: geode-sdk/build-geode-mod@main
+        with:
+          sdk: nightly
+          target: ${{ matrix.config.target }}
+
